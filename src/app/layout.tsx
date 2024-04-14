@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import clsx from "clsx";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function RootLayout({
                 <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />
                 <div className="pointer-events-none absolute inset-0 -z-40 h-full opacity-20 mix-blend-soft-light"></div>
                 <Footer />
+                <PrismicPreview repositoryName={repositoryName} />
             </body>
         </html>
     );
