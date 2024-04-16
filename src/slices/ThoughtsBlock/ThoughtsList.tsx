@@ -92,7 +92,7 @@ export default function ThoughtList({
                     >
                         <div
                             className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row "
-                            aria-label={thoughtItem.thought}
+                            aria-label={thoughtItem.thought.toString()}
                         >
                             <span key={index} className="">
                                 <PrismicRichText

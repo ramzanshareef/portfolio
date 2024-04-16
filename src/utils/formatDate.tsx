@@ -1,8 +1,6 @@
-import { DateField } from "@prismicio/client";
-
-export function formatDate(dateStr: DateField): string {
-    if (!dateStr) return "";
-    const date = new Date(dateStr);
+export function formatDate(dateStr: string | null): string {
+    if (!dateStr) return ""; // If dateStr is null or undefined, return an empty string
+    const date = new Date(dateStr); // Parse the string into a Date object
     const options: Intl.DateTimeFormatOptions = {
         weekday: "long",
         year: "numeric",
