@@ -259,9 +259,16 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/client@^7.1.0", "@prismicio/client@^7.3.1", "@prismicio/client@^7.4.1":
+"@prismicio/client@^7.1.0", "@prismicio/client@^7.3.1":
   version "7.4.1"
   resolved "https://registry.npmjs.org/@prismicio/client/-/client-7.4.1.tgz"
+  integrity sha512-2aYheJkuKRXL1HWBgq72HeYnloaj4+SIpp+9Pstla9zyJQkHcHZoHqg9F1YChnZ2mYoaUePbkriQ/fxnAIWF0w==
+  dependencies:
+    imgix-url-builder "^0.0.4"
+
+"@prismicio/client@^7.4.1":
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-7.4.1.tgz#441c3666ed2473fb8ef6b5248ea059475f94d3e8"
   integrity sha512-2aYheJkuKRXL1HWBgq72HeYnloaj4+SIpp+9Pstla9zyJQkHcHZoHqg9F1YChnZ2mYoaUePbkriQ/fxnAIWF0w==
   dependencies:
     imgix-url-builder "^0.0.4"
@@ -291,7 +298,7 @@
 
 "@prismicio/next@^1.5.0":
   version "1.5.0"
-  resolved "https://registry.npmjs.org/@prismicio/next/-/next-1.5.0.tgz"
+  resolved "https://registry.yarnpkg.com/@prismicio/next/-/next-1.5.0.tgz#a11d8dfbc715b35981f89e7c97d2f788ed2d80ec"
   integrity sha512-WbAbBwvUUfrgCJCX8a1SKjGrbnpzLtbo9MnTn0aDRc2yZ4BhK1PRN4Q24Bqx0wmJybQkzM6PcBKiDkZBps1gxA==
   dependencies:
     "@formatjs/intl-localematcher" "^0.5.2"
@@ -300,7 +307,7 @@
 
 "@prismicio/react@^2.7.4":
   version "2.7.4"
-  resolved "https://registry.npmjs.org/@prismicio/react/-/react-2.7.4.tgz"
+  resolved "https://registry.yarnpkg.com/@prismicio/react/-/react-2.7.4.tgz#a595eaf8a058165d2ff7ebf85856275e502b66d1"
   integrity sha512-FIbDxAH6gy2Cw9AaA+UhI5LG2QyHwfgJS60Wuo/i6xwcgZRLELUcsoHK7/rLzxSXvNMmiaoqH61Wi5rip8Z0Rg==
   dependencies:
     "@prismicio/richtext" "^2.1.5"
@@ -531,7 +538,7 @@
 
 "@slicemachine/adapter-next@^0.3.38":
   version "0.3.38"
-  resolved "https://registry.npmjs.org/@slicemachine/adapter-next/-/adapter-next-0.3.38.tgz"
+  resolved "https://registry.yarnpkg.com/@slicemachine/adapter-next/-/adapter-next-0.3.38.tgz#a75bc284b5f85a6edd649e064a079fb62944c7da"
   integrity sha512-WP68O8JpMh4/0ijEUO9WWQozdluFDmglhQiwDhWY+n+BEOYDOabnGh8w2x0YbBvS8UdnrXitCiyn5aBavmhR6g==
   dependencies:
     "@prismicio/simulator" "^0.1.4"
@@ -3741,7 +3748,7 @@ slash@^3.0.0:
 
 slice-machine-ui@^1.26.0:
   version "1.26.0"
-  resolved "https://registry.npmjs.org/slice-machine-ui/-/slice-machine-ui-1.26.0.tgz"
+  resolved "https://registry.yarnpkg.com/slice-machine-ui/-/slice-machine-ui-1.26.0.tgz#96bb55ff77109e4181016655cff2ce8e0277038c"
   integrity sha512-+CADPpC9Pc66LoO8GLY+NlGniL3sqrM+8tC8eRPncrljmVRg1loCwTlDDIW2qqs5GUDjidUKrqbqq6W1sESNMg==
   dependencies:
     "@radix-ui/react-visually-hidden" "1.0.3"
@@ -3799,6 +3806,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==

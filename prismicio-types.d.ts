@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type BlogPostDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type BlogPostDocumentDataSlicesSlice = ImageBlockSlice;
 
 /**
  * Content for Blog Post documents
@@ -168,6 +168,8 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | HeaderSlice
+  | ThoughtsBlockSlice
   | ContentIndexSlice
   | TechListSlice
   | BiographyDataSlice;
@@ -231,7 +233,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type ProjectPostDocumentDataSlicesSlice = ImageBlockSlice | TextBlockSlice;
+type ProjectPostDocumentDataSlicesSlice = ImageBlockSlice;
 
 /**
  * Content for Project Post documents
@@ -661,6 +663,58 @@ export type ContentIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Header → Primary*
+ */
+export interface HeaderSliceDefaultPrimary {
+  /**
+   * Heading field in *Header → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Desription field in *Header → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Header*
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: Header
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -838,48 +892,58 @@ export type TechListSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *TextBlock → Primary*
+ * Primary content in *ThoughtsBlock → Items*
  */
-export interface TextBlockSliceDefaultPrimary {
+export interface ThoughtsBlockSliceDefaultItem {
   /**
-   * text field in *TextBlock → Primary*
+   * thought field in *ThoughtsBlock → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.primary.text
+   * - **API ID Path**: thoughts_block.items[].thought
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.RichTextField;
+  thought: prismic.RichTextField;
+
+  /**
+   * Data Created field in *ThoughtsBlock → Items*
+   *
+   * - **Field Type**: Timestamp
+   * - **Placeholder**: *None*
+   * - **API ID Path**: thoughts_block.items[].data_created
+   * - **Documentation**: https://prismic.io/docs/field#timestamp
+   */
+  data_created: prismic.TimestampField;
 }
 
 /**
- * Default variation for TextBlock Slice
+ * Default variation for ThoughtsBlock Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+export type ThoughtsBlockSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TextBlockSliceDefaultPrimary>,
-  never
+  Record<string, never>,
+  Simplify<ThoughtsBlockSliceDefaultItem>
 >;
 
 /**
- * Slice variation for *TextBlock*
+ * Slice variation for *ThoughtsBlock*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type ThoughtsBlockSliceVariation = ThoughtsBlockSliceDefault;
 
 /**
- * TextBlock Shared Slice
+ * ThoughtsBlock Shared Slice
  *
- * - **API ID**: `text_block`
- * - **Description**: TextBlock
+ * - **API ID**: `thoughts_block`
+ * - **Description**: ThoughtsBlock
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSlice = prismic.SharedSlice<
-  "text_block",
-  TextBlockSliceVariation
+export type ThoughtsBlockSlice = prismic.SharedSlice<
+  "thoughts_block",
+  ThoughtsBlockSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -916,6 +980,10 @@ declare module "@prismicio/client" {
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
       ContentIndexSliceDefault,
+      HeaderSlice,
+      HeaderSliceDefaultPrimary,
+      HeaderSliceVariation,
+      HeaderSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -929,10 +997,10 @@ declare module "@prismicio/client" {
       TechListSliceDefaultItem,
       TechListSliceVariation,
       TechListSliceDefault,
-      TextBlockSlice,
-      TextBlockSliceDefaultPrimary,
-      TextBlockSliceVariation,
-      TextBlockSliceDefault,
+      ThoughtsBlockSlice,
+      ThoughtsBlockSliceDefaultItem,
+      ThoughtsBlockSliceVariation,
+      ThoughtsBlockSliceDefault,
     };
   }
 }

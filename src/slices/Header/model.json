@@ -1,8 +1,8 @@
 {
-  "id": "text_block",
+  "id": "header",
   "type": "SharedSlice",
-  "name": "TextBlock",
-  "description": "TextBlock",
+  "name": "Header",
+  "description": "Header",
   "variations": [
     {
       "id": "default",
@@ -12,10 +12,17 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "text": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "text",
+            "label": "Desription",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

@@ -41,9 +41,6 @@
           "choices": {
             "image_block": {
               "type": "SharedSlice"
-            },
-            "text_block": {
-              "type": "SharedSlice"
             }
           }
         }
