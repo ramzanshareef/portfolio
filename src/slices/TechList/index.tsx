@@ -18,7 +18,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
         >
-            <Heading as="h2" size="lg">
+            <Heading as="h2" size="md">
                 {slice.primary.heading}
             </Heading>
             <SkillsComp skills={slice.items} />

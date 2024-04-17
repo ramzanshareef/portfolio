@@ -1,0 +1,58 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "diagram",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "desert",
+							"type": "Text"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Enim ad ad qui sint elit minim nisi laboris ex mollit quis sit labore aliqua."
+									}
+								}
+							]
+						}
+					],
+					[
+						"from_date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Date",
+							"value": "2016-03-20"
+						}
+					],
+					[
+						"to_date",
+						{
+							"__TYPE__": "FieldContent",
+							"type": "Date",
+							"value": "2013-11-12"
+						}
+					]
+				]
+			}
+		]
+	}
+]
