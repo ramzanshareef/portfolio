@@ -10,7 +10,7 @@ import { Content } from "@prismicio/client";
 gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
-    items: Content.BlogPostDocument[] | Content.ProjectPostDocument[];
+    items: Content.ProjectPostDocument[];
     contentType: Content.ContentIndexSlice["primary"]["content_type"];
     viewMoreText: Content.ContentIndexSlice["primary"]["view_more_text"];
     fallbackItemImage: Content.ContentIndexSlice["primary"]["fallback_item_image"];
@@ -30,7 +30,7 @@ export default function ContentList({
     const [hovering, setHovering] = useState(false);
     const lastMousePos = useRef({ x: 0, y: 0 });
 
-    const urlPrefix = contentType === "Blog" ? "/blogs" : "/projects";
+    const urlPrefix = "/projects";
 
     useEffect(() => {
         let ctx = gsap.context(() => {

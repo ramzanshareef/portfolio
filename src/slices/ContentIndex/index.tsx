@@ -9,11 +9,9 @@ export type ContentIndexProps = SliceComponentProps<Content.ContentIndexSlice>;
 
 const ContentIndex = async ({ slice }: ContentIndexProps): Promise<JSX.Element> => {
     const client = createClient();
-    const blogPosts = await client.getAllByType("blog_post");
-    const projects = await client.getAllByType("project_post");
+    const items = await client.getAllByType("project_post");
 
-    const contentType = slice.primary.content_type || "Blog";
-    const items = contentType === "Blog" ? blogPosts : projects;
+    const contentType = slice.primary.content_type || "Project";
 
     return (
         <Bounded
