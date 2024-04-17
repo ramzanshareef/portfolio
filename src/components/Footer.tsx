@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import React from "react";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
