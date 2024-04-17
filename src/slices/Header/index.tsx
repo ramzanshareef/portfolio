@@ -9,7 +9,7 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
         <section
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
-            className="px-4 pt-10 md:px-6 md:pt-14 lg:pt-16 -mb-5 md:-mb-10 "
+            className="px-4 pt-10 md:px-6 md:pt-14 lg:pt-16"
         >
             <div className="mx-auto w-full max-w-7xl">
                 <Heading size="md" className="mb-4" as="h3">

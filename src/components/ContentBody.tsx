@@ -19,12 +19,13 @@ export default function ContentBody({
                 <Heading
                     as="h1"
                     size="lg"
+                    className="text-center text-white mb-4 md:mb-8"
                 >
                     {page.data.title}
                 </Heading>
                 <div className="flex gap-4">
                     {page.tags.map((tag, index) => (
-                        <span key={index} className="text-base md:text-xl font-bold px-2 py-1 rounded-lg text-white  bg-indigo-600">
+                        <span key={index} className="font-bold px-2 py-1 rounded-lg text-white  bg-indigo-600">
                             {tag}
                         </span>
                     ))}

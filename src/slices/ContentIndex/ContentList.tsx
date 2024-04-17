@@ -109,12 +109,7 @@ export default function ContentList({
         const image = isFilled.image(item.data.hover_image)
             ? item.data.hover_image
             : fallbackItemImage;
-        return asImageSrc(image, {
-            fit: "crop",
-            w: 220,
-            h: 320,
-            exp: -10,
-        });
+        return asImageSrc(image);
     });
 
     // Preload images
@@ -142,20 +137,20 @@ export default function ContentList({
                     >
                         <a
                             href={`${urlPrefix}/${post.uid}`}
-                            className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row "
+                            className="flex flex-col md:flex-row md:justify-between md:items-center border-t border-t-slate-100 py-10 text-slate-200"
                             aria-label={post.data.title || ""}
                         >
                             <div className="flex flex-col">
                                 <span className="text-3xl font-bold">{post.data.title}</span>
                                 <div className="flex gap-3">
                                     {post.tags.map((tag, index) => (
-                                        <span key={index} className="text-lg font-bold bg-indigo-500 px-2 py-1 rounded-lg">
+                                        <span key={index} className="font-bold bg-indigo-600 px-2 py-1 rounded-lg cursor-context-menu">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                             </div>
-                            <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0 hover:underline">
+                            <span className="mx-auto flex items-center gap-2 text-xl font-medium md:mx-0 md:ml-0 md:my-0 hover:underline my-1">
                                 {viewMoreText} <MdArrowOutward />
                             </span>
                         </a>
@@ -163,7 +158,7 @@ export default function ContentList({
                 ))}
 
                 <div
-                    className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[320px] w-[220px] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+                    className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[20rem] w-[32.5rem] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
                     style={{
                         backgroundImage:
                             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
