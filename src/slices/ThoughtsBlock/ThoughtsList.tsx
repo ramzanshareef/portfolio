@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-import { formatDate } from "@/utils/formatDate";
+import { formatDateForExperience } from "@/utils/formatDate";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +99,7 @@ export default function ThoughtList({
                                 />
                             </span>
                             <span className="text-base font-bold text-right">
-                                {formatDate(thoughtItem.data_created)}
+                                {formatDateForExperience(thoughtItem.date_created)}
                             </span>
                         </div>
                     </li>

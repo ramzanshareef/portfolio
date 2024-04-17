@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-import { formatDateForExperience } from "@/utils/formatDate";
 
 type ExpListProps = {
     expList: Content.ExperienceSlice["items"];
@@ -54,16 +53,14 @@ const ExpList = ({
                     <li key={index}>
                         <div className="flex-start flex items-center pt-3">
                             <div className="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-neutral-300 dark:bg-neutral-500"></div>
-                            <p className="text-sm text-slate-400">
-                                {formatDateForExperience(item.from_date)}
-                            </p>
-                            <p className="text-sm text-slate-400">&nbsp;to&nbsp;</p>
-                            <p className="text-sm text-slate-400">
-                                {formatDateForExperience(item.to_date)}
-                            </p>
+                            <h3 className="text-base font-semibold">
+                                {item.date}
+                            </h3>
                         </div>
                         <div className="mb-6 ms-4 mt-2">
-                            <h4 className="mb-1.5 text-xl font-bold">{item.title}</h4>
+                            <h4 className="mb-1.5 text-xl font-bold">
+                                {item.title}
+                            </h4>
                             <PrismicRichText
                                 field={item.content}
                             />

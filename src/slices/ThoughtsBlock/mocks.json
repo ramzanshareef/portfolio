@@ -22,11 +22,11 @@
 						}
 					],
 					[
-						"data_created",
+						"date_created",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Timestamp",
-							"value": "2017-04-29T11:03:15Z"
+							"type": "Date",
+							"value": "2015-12-26"
 						}
 					]
 				]

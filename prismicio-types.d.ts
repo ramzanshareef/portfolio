@@ -678,24 +678,14 @@ export interface ExperienceSliceDefaultPrimary {
  */
 export interface ExperienceSliceDefaultItem {
   /**
-   * From Date field in *Experience → Items*
+   * date field in *Experience → Items*
    *
-   * - **Field Type**: Date
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: experience.items[].from_date
-   * - **Documentation**: https://prismic.io/docs/field#date
+   * - **API ID Path**: experience.items[].date
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  from_date: prismic.DateField;
-
-  /**
-   * To Date field in *Experience → Items*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: experience.items[].to_date
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  to_date: prismic.DateField;
+  date: prismic.KeyTextField;
 
   /**
    * Title field in *Experience → Items*
@@ -1047,14 +1037,14 @@ export interface ThoughtsBlockSliceDefaultItem {
   thought: prismic.RichTextField;
 
   /**
-   * Data Created field in *ThoughtsBlock → Items*
+   * Date Created field in *ThoughtsBlock → Items*
    *
-   * - **Field Type**: Timestamp
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
-   * - **API ID Path**: thoughts_block.items[].data_created
-   * - **Documentation**: https://prismic.io/docs/field#timestamp
+   * - **API ID Path**: thoughts_block.items[].date_created
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  data_created: prismic.TimestampField;
+  date_created: prismic.DateField;
 }
 
 /**

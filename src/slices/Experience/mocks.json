@@ -36,19 +36,11 @@
 						}
 					],
 					[
-						"from_date",
+						"date",
 						{
 							"__TYPE__": "FieldContent",
-							"type": "Date",
-							"value": "2016-03-20"
-						}
-					],
-					[
-						"to_date",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Date",
-							"value": "2013-11-12"
+							"value": "lunch",
+							"type": "Text"
 						}
 					]
 				]

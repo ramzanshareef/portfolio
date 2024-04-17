@@ -6,6 +6,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdArrowOutward } from "react-icons/md";
 import { Content } from "@prismicio/client";
+import Link from "next/link";
+import clsx from "clsx";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,6 +124,8 @@ export default function ContentList({
         });
     }, [contentImages]);
 
+    const router = useRouter();
+
     return (
         <>
             <ul
@@ -133,32 +138,45 @@ export default function ContentList({
                         key={index}
                         ref={(el: any) => (itemsRef.current[index] = el)}
                         onMouseEnter={() => onMouseEnter(index)}
-                        className="list-item opacity-0 overflow-hidden"
+                        className="list-item opacity-0"
                     >
-                        <a
-                            href={`${urlPrefix}/${post.uid}`}
-                            className="flex flex-col md:flex-row md:justify-between md:items-center border-t border-t-slate-100 py-10 text-slate-200"
+                        <div
+                            onClick={()=>router.push(`${urlPrefix}/${post.uid}`)}
+                            className="flex flex-col gap-y-1 sm:gap-y-0 md:flex-row md:justify-between md:items-center border-t border-t-slate-100 py-10 text-slate-200 cursor-pointer"
                             aria-label={post.data.title || ""}
                         >
                             <div className="flex flex-col">
                                 <span className="text-3xl font-bold">{post.data.title}</span>
                                 <div className="flex gap-3">
                                     {post.tags.map((tag, index) => (
-                                        <span key={index} className="font-bold bg-indigo-600 px-2 py-1 rounded-lg cursor-context-menu">
+                                        <span key={index} className="font-bold bg-indigo-600 px-1 py-0.5 text-base rounded-lg cursor-context-menu">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                             </div>
-                            <span className="mx-auto flex items-center gap-2 text-xl font-medium md:mx-0 md:ml-0 md:my-0 hover:underline my-1">
-                                {viewMoreText} <MdArrowOutward />
-                            </span>
-                        </a>
+                            <Link
+                                href={`${urlPrefix}/${post.uid}`}
+                                className={clsx(
+                                    "group relative flex w-fit items-center justify-center overflow-hidden rounded-md border-2 border-slate-900 bg-slate-50 px-4 py-2 font-bold transition-transform ease-out  hover:scale-105 text-slate-900 hover:text-white"
+                                )}
+                            >
+                                <span
+                                    className={clsx(
+                                        "absolute inset-0 z-0 h-full w-full translate-y-9 bg-indigo-600 transition-transform  duration-300 ease-in-out group-hover:translate-y-0",
+                                    )}
+                                />
+                                <span className="relative flex items-center justify-center gap-2">
+                                    {viewMoreText}
+                                    <MdArrowOutward className="inline-block" />
+                                </span>
+                            </Link>
+                        </div>
                     </li>
                 ))}
 
                 <div
-                    className="hover-reveal pointer-events-none absolute left-0 top-0 -z-10 h-[20rem] w-[32.5rem] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+                    className="hover-reveal pointer-events-none absolute left-0 top-0 -z-40 h-[20rem] w-[32.5rem] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
                     style={{
                         backgroundImage:
                             currentItem !== null ? `url(${contentImages[currentItem]})` : "",

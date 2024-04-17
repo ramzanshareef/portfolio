@@ -45,15 +45,15 @@ export default function ContentBody({
                         showIcon={false}
                         linkField={page.data.github_link}
                     />}
-                    {page.data.deploy_link && <Button
+                    {(page.data.deploy_link) && <Button
                         label={
                             <div
                                 className="flex items-center gap-2 text-xs md:text-base"
                             >
-                                {page.data.deploy_label}
-                                <GrDeploy
+                                {page.data.deploy_label?.toString() || "Not yet deployed!"}
+                                {page.data.deploy_label?.toString() && <GrDeploy
                                     className="inline-block mr-2"
-                                />
+                                />}
                             </div>
                         }
                         showIcon={false}

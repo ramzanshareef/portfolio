@@ -21,17 +21,10 @@
         }
       },
       "items": {
-        "from_date": {
-          "type": "Date",
+        "date": {
+          "type": "Text",
           "config": {
-            "label": "From Date",
-            "placeholder": ""
-          }
-        },
-        "to_date": {
-          "type": "Date",
-          "config": {
-            "label": "To Date",
+            "label": "date",
             "placeholder": ""
           }
         },
