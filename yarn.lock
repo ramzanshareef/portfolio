@@ -259,14 +259,7 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
-"@prismicio/client@^7.1.0", "@prismicio/client@^7.3.1":
-  version "7.4.1"
-  resolved "https://registry.npmjs.org/@prismicio/client/-/client-7.4.1.tgz"
-  integrity sha512-2aYheJkuKRXL1HWBgq72HeYnloaj4+SIpp+9Pstla9zyJQkHcHZoHqg9F1YChnZ2mYoaUePbkriQ/fxnAIWF0w==
-  dependencies:
-    imgix-url-builder "^0.0.4"
-
-"@prismicio/client@^7.4.1":
+"@prismicio/client@^7.1.0", "@prismicio/client@^7.3.1", "@prismicio/client@^7.4.1":
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/@prismicio/client/-/client-7.4.1.tgz#441c3666ed2473fb8ef6b5248ea059475f94d3e8"
   integrity sha512-2aYheJkuKRXL1HWBgq72HeYnloaj4+SIpp+9Pstla9zyJQkHcHZoHqg9F1YChnZ2mYoaUePbkriQ/fxnAIWF0w==

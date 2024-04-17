@@ -19,7 +19,6 @@ export default function ThoughtList({
     const component = useRef(null);
     const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
 
-    const revealRef = useRef(null);
     const [hovering, setHovering] = useState(false);
     const lastMousePos = useRef({ x: 0, y: 0 });
 
@@ -99,13 +98,13 @@ export default function ThoughtList({
                                     field={thoughtItem.thought}
                                 />
                             </span>
-                            <span className="text-lg font-bold text-right">
+                            <span className="text-base font-bold text-right">
                                 {formatDate(thoughtItem.data_created)}
                             </span>
                         </div>
                     </li>
                 ))}
-            </ul>
+            </ul >
         </>
     );
 }

@@ -21,7 +21,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
             <Heading as="h2" size="lg">
                 {slice.primary.heading}
             </Heading>
-            <SkillsComp />
+            <SkillsComp skills={slice.items} />
         </Bounded>
     );
 };

@@ -4,10 +4,12 @@ import dynamic from "next/dynamic";
 
 export const components = {
   biography_data: dynamic(() => import("./BiographyData")),
+  button_slice: dynamic(() => import("./ButtonSlice")),
   content_index: dynamic(() => import("./ContentIndex")),
   header: dynamic(() => import("./Header")),
   hero: dynamic(() => import("./Hero")),
   image_block: dynamic(() => import("./ImageBlock")),
   tech_list: dynamic(() => import("./TechList")),
+  text_block: dynamic(() => import("./TextBlock")),
   thoughts_block: dynamic(() => import("./ThoughtsBlock")),
 };

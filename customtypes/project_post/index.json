@@ -19,13 +19,6 @@
         },
         "type": "UID"
       },
-      "date": {
-        "type": "Date",
-        "config": {
-          "label": "Date",
-          "placeholder": ""
-        }
-      },
       "hover_image": {
         "type": "Image",
         "config": {
@@ -34,11 +27,44 @@
           "thumbnails": []
         }
       },
+      "github_label": {
+        "type": "Text",
+        "config": {
+          "label": "GitHub Label",
+          "placeholder": ""
+        }
+      },
+      "github_link": {
+        "type": "Link",
+        "config": {
+          "label": "GitHub Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "deploy_label": {
+        "type": "Text",
+        "config": {
+          "label": "Deploy Label",
+          "placeholder": ""
+        }
+      },
+      "deploy_link": {
+        "type": "Link",
+        "config": {
+          "label": "Deploy Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "text_block": {
+              "type": "SharedSlice"
+            },
             "image_block": {
               "type": "SharedSlice"
             }
@@ -47,6 +73,13 @@
       }
     },
     "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -64,13 +97,6 @@
           "thumbnails": []
         },
         "type": "Image"
-      },
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
       }
     }
   }

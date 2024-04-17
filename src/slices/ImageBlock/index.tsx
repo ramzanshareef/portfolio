@@ -10,10 +10,10 @@ const ImageBlock = ({ slice }: ImageBlockProps): JSX.Element => {
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
         >
-           <PrismicNextImage
-           field={slice.primary.image}
-        imgixParams={{ w: 600 }}
-           />
+            <PrismicNextImage
+                field={slice.primary.image}
+                imgixParams={{ w: 600 }}
+            />
         </section>
     );
 };

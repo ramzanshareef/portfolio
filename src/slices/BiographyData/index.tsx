@@ -5,15 +5,8 @@ import Heading from "@/components/Heading";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
-/**
- * Props for `BiographyData`.
- */
-export type BiographyDataProps =
-    SliceComponentProps<Content.BiographyDataSlice>;
+export type BiographyDataProps = SliceComponentProps<Content.BiographyDataSlice>;
 
-/**
- * Component for "BiographyData" Slices.
- */
 const BiographyData = ({ slice }: BiographyDataProps): JSX.Element => {
     return (
         <Bounded
@@ -27,7 +20,13 @@ const BiographyData = ({ slice }: BiographyDataProps): JSX.Element => {
                 <div className="prose prose-xl prose-slate prose-invert col-start-1">
                     <PrismicRichText field={slice.primary.description} />
                 </div>
-                <Button linkField={slice.primary.button_link} label={slice.primary.button_text} />
+                <div 
+                    className="flex flex-wrap gap-4 col-start-1 md:col-span-2"
+                >
+                    {slice.items.map((item, index) => (
+                        <Button key={index} linkField={item.button_link} label={item.button_text} />
+                    ))}
+                </div>
                 <Avatar
                     image={slice.primary.avatar}
                     className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"

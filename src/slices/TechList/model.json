@@ -21,17 +21,25 @@
         }
       },
       "items": {
-        "tech_name": {
+        "skill_name": {
           "type": "Text",
           "config": {
-            "label": "Tech Name",
+            "label": "Skill Name",
             "placeholder": ""
           }
         },
-        "tech_color": {
-          "type": "Color",
+        "skill_image": {
+          "type": "Image",
           "config": {
-            "label": "Tech Color",
+            "label": "Skill Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "skill_link": {
+          "type": "Text",
+          "config": {
+            "label": "Skill Link",
             "placeholder": ""
           }
         }

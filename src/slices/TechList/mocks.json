@@ -14,19 +14,45 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"tech_name",
+						"skill_name",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "snow",
+							"value": "remove",
 							"type": "Text"
 						}
 					],
 					[
-						"tech_color",
+						"skill_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+								"width": 6000,
+								"height": 4000
+							},
+							"url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+							"width": 6000,
+							"height": 4000,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"skill_link",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "#933b96",
-							"type": "Color"
+							"value": "card",
+							"type": "Text"
 						}
 					]
 				]

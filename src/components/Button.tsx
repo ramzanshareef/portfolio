@@ -6,7 +6,7 @@ import { KeyTextField, LinkField } from "@prismicio/client";
 
 type ButtonProps = {
     linkField: LinkField;
-    label: KeyTextField;
+    label: KeyTextField | React.ReactNode;
     showIcon?: boolean;
     className?: string;
 };
