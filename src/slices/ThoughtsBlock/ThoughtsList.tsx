@@ -90,15 +90,15 @@ export default function ThoughtList({
                         className="list-item opacity-0 overflow-hidden"
                     >
                         <div
-                            className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row "
+                            className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row md:items-center"
                             aria-label={thoughtItem.thought.toString()}
                         >
-                            <span key={index} className="">
+                            <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%]">
                                 <PrismicRichText
                                     field={thoughtItem.thought}
                                 />
                             </span>
-                            <span className="text-base font-bold text-right">
+                            <span className="text-base font-semibold italic text-right">
                                 {formatDateForExperience(thoughtItem.date_created)}
                             </span>
                         </div>
