@@ -11,7 +11,7 @@ const ButtonsGroup = ({ slice }: ButtonsGroupProps): JSX.Element => {
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
         >
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2">
                 {slice.items.map((item, index) => (
                     <Button key={index} linkField={item.button_link} label={item.button_text} />
                 ))}

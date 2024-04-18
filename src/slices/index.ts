@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  all_profiles_links: dynamic(() => import("./AllProfilesLinks")),
   biography_data: dynamic(() => import("./BiographyData")),
   button_slice: dynamic(() => import("./ButtonSlice")),
   buttons_group: dynamic(() => import("./ButtonsGroup")),

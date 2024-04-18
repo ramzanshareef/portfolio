@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = ButtonsGroupSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | AllProfilesLinksSlice
+  | ButtonsGroupSlice
+  | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -70,6 +73,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AllProfilesLinksSlice
   | ExperienceSlice
   | ButtonSliceSlice
   | HeaderSlice
@@ -427,6 +431,61 @@ export type AllDocumentTypes =
   | PageDocument
   | ProjectPostDocument
   | SettingsDocument;
+
+/**
+ * Primary content in *AllProfilesLinks → Items*
+ */
+export interface AllProfilesLinksSliceDefaultItem {
+  /**
+   * key field in *AllProfilesLinks → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: all_profiles_links.items[].key
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  key: prismic.KeyTextField;
+
+  /**
+   * link field in *AllProfilesLinks → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: all_profiles_links.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for AllProfilesLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllProfilesLinksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<AllProfilesLinksSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *AllProfilesLinks*
+ */
+type AllProfilesLinksSliceVariation = AllProfilesLinksSliceDefault;
+
+/**
+ * AllProfilesLinks Shared Slice
+ *
+ * - **API ID**: `all_profiles_links`
+ * - **Description**: AllProfilesLinks
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AllProfilesLinksSlice = prismic.SharedSlice<
+  "all_profiles_links",
+  AllProfilesLinksSliceVariation
+>;
 
 /**
  * Primary content in *BiographyData → Primary*
@@ -1155,6 +1214,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavItemItem,
       AllDocumentTypes,
+      AllProfilesLinksSlice,
+      AllProfilesLinksSliceDefaultItem,
+      AllProfilesLinksSliceVariation,
+      AllProfilesLinksSliceDefault,
       BiographyDataSlice,
       BiographyDataSliceDefaultPrimary,
       BiographyDataSliceDefaultItem,
