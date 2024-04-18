@@ -61,9 +61,11 @@ const ExpList = ({
                             <h4 className="mb-1.5 text-xl font-bold">
                                 {item.title}
                             </h4>
-                            <PrismicRichText
-                                field={item.content}
-                            />
+                            <div className="prose prose-lg prose-invert min-w-full">
+                                <PrismicRichText
+                                    field={item.content}
+                                />
+                            </div>
                         </div>
                     </li>
                 ))}
