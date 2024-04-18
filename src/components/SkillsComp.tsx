@@ -13,7 +13,7 @@ const SkillsComp = ({
 }: SkillCompProps) => {
     return (
         <div className="group">
-            <div className="flex m-auto text-slate-900 bg-slate-900 overflow-hidden group-hover:overflow-x-scroll space-x-44 min-w-full hide-scroll-bar">
+            <div className="flex m-auto text-slate-900 bg-slate-900 overflow-hidden group-hover:overflow-x-scroll space-x-[18rem] min-w-full hide-scroll-bar">
                 <div
                     className="flex py-6 hide-scroll-bar min-w-full animate-loop-scroll group-hover:paused"
                 >
