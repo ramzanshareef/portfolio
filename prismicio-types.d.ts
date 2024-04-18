@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = ButtonsGroupSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -574,6 +574,61 @@ export type ButtonSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ButtonsGroup → Items*
+ */
+export interface ButtonsGroupSliceDefaultItem {
+  /**
+   * Button Text field in *ButtonsGroup → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buttons_group.items[].button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *ButtonsGroup → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: buttons_group.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for ButtonsGroup Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonsGroupSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<ButtonsGroupSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ButtonsGroup*
+ */
+type ButtonsGroupSliceVariation = ButtonsGroupSliceDefault;
+
+/**
+ * ButtonsGroup Shared Slice
+ *
+ * - **API ID**: `buttons_group`
+ * - **Description**: ButtonsGroup
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonsGroupSlice = prismic.SharedSlice<
+  "buttons_group",
+  ButtonsGroupSliceVariation
+>;
+
+/**
  * Primary content in *ContentIndex → Primary*
  */
 export interface ContentIndexSliceDefaultPrimary {
@@ -1109,6 +1164,10 @@ declare module "@prismicio/client" {
       ButtonSliceSliceDefaultPrimary,
       ButtonSliceSliceVariation,
       ButtonSliceSliceDefault,
+      ButtonsGroupSlice,
+      ButtonsGroupSliceDefaultItem,
+      ButtonsGroupSliceVariation,
+      ButtonsGroupSliceDefault,
       ContentIndexSlice,
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
