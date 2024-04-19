@@ -19,9 +19,9 @@ This is my personal portfolio project where I showcase my skills, projects, and 
 2. Open your browser and visit `http://localhost:3000`
 
 ## Features
-- Showcase your projects
-- Display your skills and experiences
-- Contact form for potential clients or employers
+- Showcase my projects
+- Display my skills and experiences
+- Showcase my thoughts
 
 ## Technologies
 - HTML
