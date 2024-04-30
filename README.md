@@ -1,6 +1,5 @@
 # Portfolio
 
-## Description
 This is my personal portfolio project where I showcase my skills, projects, and experiences.
 
 ## Table of Contents
