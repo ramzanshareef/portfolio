@@ -96,10 +96,10 @@ export default function ThoughtList({
                         className="list-item opacity-0 overflow-hidden"
                     >
                         <div
-                            className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row md:items-center"
+                            className="flex flex-col justify-between border-t border-t-slate-100 py-10  text-slate-200 md:flex-row md:items-center max-sm:gap-y-2"
                             aria-label={thoughtItem.thought.toString()}
                         >
-                            <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%]">
+                            <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-3">
                                 <PrismicRichText
                                     field={thoughtItem.thought}
                                 />
