@@ -82,8 +82,13 @@ export default function ThoughtList({
                 className="grid border-b border-b-slate-100"
                 onMouseLeave={onMouseLeave}
             >
-                {thoughts.sort((a, b) => new Date(b.date_created).getTime() - new Date(a.date_created).getTime()
-                ).map((thoughtItem, index) => (
+                {thoughts
+                    .sort((a, b) => {
+                        const dateA = a.date_created ? new Date(a.date_created).getTime() : 0;
+                        const dateB = b.date_created ? new Date(b.date_created).getTime() : 0;
+                        return dateB - dateA;
+                    })
+                    .map((thoughtItem, index) => (
                     <li
                         key={index}
                         ref={(el: any) => (itemsRef.current[index] = el)}
