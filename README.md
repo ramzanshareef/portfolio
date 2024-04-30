@@ -12,10 +12,10 @@ This is my personal portfolio project where I showcase my skills, projects, and 
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/itisRamzan/portfolio.git`
-2. Install the dependencies: `npm install`
+2. Install the dependencies: `yarn install`
 
 ## Usage
-1. Start the development server: `npm run dev`
+1. Start the development server: `yarn run dev`
 2. Open your browser and visit `http://localhost:3000`
 
 ## Features
