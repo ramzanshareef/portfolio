@@ -33,6 +33,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 },
                 duration: 0.6,
                 ease: "elastic.out",
+                delay: 0.5
             })
                 .fromTo(".tagline-title", {
                     opacity: 0,
@@ -40,9 +41,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
                 }, {
                     opacity: 1,
                     scale: 1,
-                    duration: 0.4,
+                    duration: 0.8,
                     ease: "sine.in",
-                    delay: 0.15
                 })
 
         }, component);
