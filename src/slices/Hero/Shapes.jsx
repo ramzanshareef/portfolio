@@ -131,8 +131,7 @@ function Geometry({ r, position, geometry, materials, soundEffects }) {
                 y: 0,
                 z: 0,
                 duration: 1,
-                ease: "elastic.out(1, 0.3)",
-                delay: 0.3
+                ease: "expo"
             })
         })
         return ()=> ctx.revert();

@@ -20,30 +20,30 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         let ctx = gsap.context(() => {
             const tl = gsap.timeline();
             tl.fromTo(".name-animation", {
-                x: -100, 
-                opacity: 0, 
+                x: -100,
+                opacity: 0,
                 rotate: -10
             }, {
-                x: 0, 
-                opacity: 1, 
-                rotate: 0, 
+                x: 0,
+                opacity: 1,
+                rotate: 0,
                 stagger: {
                     amount: 0.5,
-                    from: "random"  
-                }, 
-                duration: 1,
+                    from: "random"
+                },
+                duration: 0.6,
                 ease: "elastic.out",
-                delay: 0.5
             })
-            .fromTo(".tagline-title", {
-                opacity: 0, 
-                scale: 0.5
-            },{
-                opacity: 1, 
-                scale: 1, 
-                duration: 1.5, 
-                ease: "elastic.out"
-            })
+                .fromTo(".tagline-title", {
+                    opacity: 0,
+                    scale: 0.5
+                }, {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: "sine.in",
+                    delay: 0.15
+                })
 
         }, component);
         return () => ctx.revert();
