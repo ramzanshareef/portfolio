@@ -58,7 +58,7 @@ const ExpList = ({
                             </h3>
                         </div>
                         <div className="mb-6 ms-4 mt-2">
-                            <h4 className="mb-1.5 text-xl font-bold">
+                            <h4 className="mb-1.5 text-lg md:text-xl font-bold">
                                 {item.title}
                             </h4>
                             <div className="prose prose-base md:prose-lg prose-invert min-w-full">

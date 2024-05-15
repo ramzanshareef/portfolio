@@ -99,7 +99,7 @@ export default function CreationsList({
                             {
                                 creationItem.content_type === "text" ? (
                                     <div
-                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 sm:py-10 text-slate-200 md:flex-row md:items-center max-sm:gap-y-2"
+                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 gap-y-2"
                                         aria-label={creationItem.text.toString()}
                                     >
                                         <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-[0.2rem]">
@@ -107,7 +107,7 @@ export default function CreationsList({
                                                 field={creationItem.text}
                                             />
                                         </span>
-                                        <span className="text-base font-semibold italic text-right">
+                                        <span className="text-sm sm:text-[0.9rem] italic text-right">
                                             {formatDateForExperience(creationItem.date_created)}
                                         </span>
                                     </div>
@@ -116,23 +116,23 @@ export default function CreationsList({
                             {
                                 creationItem.content_type === "image" ? (
                                     <div
-                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 sm:py-10 text-slate-200 md:flex-row md:items-center max-sm:gap-y-2"
+                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 gap-y-2"
                                     >
                                         <div
-                                            className="flex flex-col items-center gap-y-4 md:w-4/5"
+                                            className="flex flex-col items-center gap-y-4 md:w-4/5 mx-auto"
                                         >
                                             <PrismicNextImage
                                                 field={creationItem.image}
                                                 width={400}
-                                                className="mx-auto md:mx-0 md:mr-4 md:w-1/3 md:max-w-[300px] md:min-w-[300px] md:h-auto md:max-h-[300px] md:min-h-[300px] rounded-xl"
+                                                className="mx-auto md:mx-0 md:mr-4 md:w-1/3 md:max-w-[300px] md:min-w-[300px] md:h-auto md:max-h-[300px] md:min-h-[300px] rounded"
                                             />
-                                            <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-3">
+                                            <span key={index} className="prose prose-invert prose-lg max-md:min-w-full max-w-[80%] leading-3 text-center">
                                                 <PrismicRichText
                                                     field={creationItem.text}
                                                 />
                                             </span>
                                         </div>
-                                        <span className="text-base font-semibold italic text-right">
+                                        <span className="text-sm sm:text-[0.9rem] italic text-right">
                                             {formatDateForExperience(creationItem.date_created)}
                                         </span>
                                     </div>
@@ -141,22 +141,22 @@ export default function CreationsList({
                             {
                                 creationItem.content_type === "video" ? (
                                     <div
-                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 sm:py-10 text-slate-200 md:flex-row md:items-center max-sm:gap-y-2"
+                                        className="flex flex-col justify-between border-t border-t-slate-100 pt-10 gap-y-2"
                                     >
                                         <div
-                                            className="flex flex-col items-center gap-y-4 md:w-4/5"
+                                            className="flex flex-col items-center gap-y-4 md:w-4/5 mx-auto"
                                         >
                                             <video src={creationItem.video_link?.toString()}
                                                 controls
-                                                className="rounded-xl w-full md:w-4/5"
+                                                className="rounded w-full md:w-4/5"
                                             />
-                                            <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-3">
+                                            <span key={index} className="prose prose-invert prose-lg max-md:min-w-full max-w-[80%] leading-3 text-center">
                                                 <PrismicRichText
                                                     field={creationItem.text}
                                                 />
                                             </span>
                                         </div>
-                                        <span className="text-base font-semibold italic text-right">
+                                        <span className="text-sm sm:text-[0.9rem] italic text-right">
                                             {formatDateForExperience(creationItem.date_created)}
                                         </span>
                                     </div>
