@@ -102,12 +102,12 @@ export default function CreationsList({
                                         className="flex flex-col justify-between border-t border-t-slate-100 pt-10 gap-y-2"
                                         aria-label={creationItem.text.toString()}
                                     >
-                                        <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-3 whitespace-break-spaces">
+                                        <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] whitespace-break-spaces">
                                             <PrismicRichText
                                                 field={creationItem.text}
                                             />
                                         </span>
-                                        <span className="text-sm sm:text-[0.9rem] italic text-right">
+                                        <span className="text-sm sm:text-[0.9rem] italic text-right pr-3">
                                             {formatDateForExperience(creationItem.date_created)}
                                         </span>
                                     </div>
