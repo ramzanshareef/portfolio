@@ -102,7 +102,7 @@ export default function CreationsList({
                                         className="flex flex-col justify-between border-t border-t-slate-100 pt-10 gap-y-2"
                                         aria-label={creationItem.text.toString()}
                                     >
-                                        <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-[0.2rem]">
+                                        <span key={index} className="prose prose-invert prose-base max-md:min-w-full max-w-[80%] leading-3 whitespace-break-spaces">
                                             <PrismicRichText
                                                 field={creationItem.text}
                                             />
