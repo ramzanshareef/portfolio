@@ -25,7 +25,7 @@ export default function ContentBody({
                 </Heading>
                 <div className="flex gap-4">
                     {page.tags.map((tag, index) => (
-                        <span key={index} className="font-bold px-2 py-1 rounded-lg text-white  bg-indigo-600">
+                        <span key={index} className="font-semibold bg-indigo-600 px-1.5 py-1 text-base rounded-lg cursor-context-menu">
                             {tag}
                         </span>
                     ))}
@@ -60,7 +60,7 @@ export default function ContentBody({
                         linkField={page.data.deploy_link}
                     />}
                 </div>
-                <div className="prose prose-lg prose-invert w-full max-w-none overflow-scroll hide-scroll-bar">
+                <div className="prose prose-base md:prose-lg prose-invert w-full max-w-none overflow-scroll hide-scroll-bar">
                     <SliceZone slices={page.data.slices} components={components} />
                 </div>
             </div>

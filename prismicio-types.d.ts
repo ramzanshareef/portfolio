@@ -73,11 +73,11 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CreationsBlockSlice
   | AllProfilesLinksSlice
   | ExperienceSlice
   | ButtonSliceSlice
   | HeaderSlice
-  | ThoughtsBlockSlice
   | ContentIndexSlice
   | TechListSlice
   | BiographyDataSlice;
@@ -773,6 +773,92 @@ export type ContentIndexSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *CreationsBlock → Items*
+ */
+export interface CreationsBlockSliceDefaultItem {
+  /**
+   * Content Type field in *CreationsBlock → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: text
+   * - **API ID Path**: creations_block.items[].content_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  content_type: prismic.SelectField<"text" | "image" | "video", "filled">;
+
+  /**
+   * Date Created field in *CreationsBlock → Items*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: creations_block.items[].date_created
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_created: prismic.DateField;
+
+  /**
+   * Text field in *CreationsBlock → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: creations_block.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Image field in *CreationsBlock → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: creations_block.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Video Link field in *CreationsBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: creations_block.items[].video_link
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_link: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CreationsBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CreationsBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<CreationsBlockSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CreationsBlock*
+ */
+type CreationsBlockSliceVariation = CreationsBlockSliceDefault;
+
+/**
+ * CreationsBlock Shared Slice
+ *
+ * - **API ID**: `creations_block`
+ * - **Description**: CreationsBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CreationsBlockSlice = prismic.SharedSlice<
+  "creations_block",
+  CreationsBlockSliceVariation
+>;
+
+/**
  * Primary content in *Experience → Primary*
  */
 export interface ExperienceSliceDefaultPrimary {
@@ -1136,61 +1222,6 @@ export type TextBlockSlice = prismic.SharedSlice<
   TextBlockSliceVariation
 >;
 
-/**
- * Primary content in *ThoughtsBlock → Items*
- */
-export interface ThoughtsBlockSliceDefaultItem {
-  /**
-   * thought field in *ThoughtsBlock → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: thoughts_block.items[].thought
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  thought: prismic.RichTextField;
-
-  /**
-   * Date Created field in *ThoughtsBlock → Items*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: thoughts_block.items[].date_created
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  date_created: prismic.DateField;
-}
-
-/**
- * Default variation for ThoughtsBlock Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ThoughtsBlockSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<ThoughtsBlockSliceDefaultItem>
->;
-
-/**
- * Slice variation for *ThoughtsBlock*
- */
-type ThoughtsBlockSliceVariation = ThoughtsBlockSliceDefault;
-
-/**
- * ThoughtsBlock Shared Slice
- *
- * - **API ID**: `thoughts_block`
- * - **Description**: ThoughtsBlock
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ThoughtsBlockSlice = prismic.SharedSlice<
-  "thoughts_block",
-  ThoughtsBlockSliceVariation
->;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1235,6 +1266,10 @@ declare module "@prismicio/client" {
       ContentIndexSliceDefaultPrimary,
       ContentIndexSliceVariation,
       ContentIndexSliceDefault,
+      CreationsBlockSlice,
+      CreationsBlockSliceDefaultItem,
+      CreationsBlockSliceVariation,
+      CreationsBlockSliceDefault,
       ExperienceSlice,
       ExperienceSliceDefaultPrimary,
       ExperienceSliceDefaultItem,
@@ -1261,10 +1296,6 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
-      ThoughtsBlockSlice,
-      ThoughtsBlockSliceDefaultItem,
-      ThoughtsBlockSliceVariation,
-      ThoughtsBlockSliceDefault,
     };
   }
 }

@@ -141,15 +141,15 @@ export default function ContentList({
                         className="list-item opacity-0"
                     >
                         <div
-                            onClick={()=>router.push(`${urlPrefix}/${post.uid}`)}
+                            onClick={() => router.push(`${urlPrefix}/${post.uid}`)}
                             className="flex flex-col gap-y-1 sm:gap-y-0 md:flex-row md:justify-between md:items-center border-t border-t-slate-100 py-10 text-slate-200 cursor-pointer"
                             aria-label={post.data.title || ""}
                         >
-                            <div className="flex flex-col">
+                            <div className="flex flex-col gap-y-1">
                                 <span className="text-3xl font-bold">{post.data.title}</span>
                                 <div className="flex gap-3">
                                     {post.tags.map((tag, index) => (
-                                        <span key={index} className="font-bold bg-indigo-600 px-1 py-0.5 text-base rounded-lg cursor-context-menu">
+                                        <span key={index} className="font-semibold bg-indigo-600 px-1.5 py-1 text-base rounded-lg cursor-context-menu">
                                             {tag}
                                         </span>
                                     ))}
@@ -174,15 +174,18 @@ export default function ContentList({
                         </div>
                     </li>
                 ))}
-
                 <div
-                    className="hover-reveal pointer-events-none absolute left-0 top-0 -z-40 h-[20rem] w-[32.5rem] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300"
+                    className={clsx(
+                        "hover-reveal pointer-events-none absolute left-0 top-0 -z-40 h-[20rem] w-[32.5rem] rounded-lg bg-cover bg-center opacity-0 transition-[background] duration-300",
+                        "hidden sm:block"
+                    )}
                     style={{
                         backgroundImage:
                             currentItem !== null ? `url(${contentImages[currentItem]})` : "",
                     }}
                     ref={revealRef}
                 ></div>
+
             </ul>
         </>
     );

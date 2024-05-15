@@ -8,11 +8,11 @@ export const components = {
   button_slice: dynamic(() => import("./ButtonSlice")),
   buttons_group: dynamic(() => import("./ButtonsGroup")),
   content_index: dynamic(() => import("./ContentIndex")),
+  creations_block: dynamic(() => import("./CreationsBlock")),
   experience: dynamic(() => import("./Experience")),
   header: dynamic(() => import("./Header")),
   hero: dynamic(() => import("./Hero")),
   image_block: dynamic(() => import("./ImageBlock")),
   tech_list: dynamic(() => import("./TechList")),
   text_block: dynamic(() => import("./TextBlock")),
-  thoughts_block: dynamic(() => import("./ThoughtsBlock")),
 };

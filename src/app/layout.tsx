@@ -8,6 +8,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import NextTopLoader from "nextjs-toploader";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -24,6 +25,10 @@ export default function RootLayout({
     return (
         <html lang="en" className="bg-slate-900 text-slate-100">
             <body className={clsx(urbanist.className, "relative min-h-screen")}>
+                <NextTopLoader
+                    color="#000fff"
+                    showSpinner={false}
+                />
                 <Header />
                 {children}
                 <div className="background-gradient absolute inset-0 -z-50 max-h-screen" />

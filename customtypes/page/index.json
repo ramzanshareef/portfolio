@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "creations_block": {
+              "type": "SharedSlice"
+            },
             "all_profiles_links": {
               "type": "SharedSlice"
             },
@@ -27,9 +30,6 @@
               "type": "SharedSlice"
             },
             "header": {
-              "type": "SharedSlice"
-            },
-            "thoughts_block": {
               "type": "SharedSlice"
             },
             "content_index": {
