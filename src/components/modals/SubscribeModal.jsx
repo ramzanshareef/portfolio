@@ -154,7 +154,7 @@ const SubscribeModal = ({ isOpen, onClose, hideOnClose }) => {
                                             type="email"
                                             placeholder="Email Address"
                                             required
-                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-transparent placeholder-slate-950
+                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-black
                                             " />
                                         <label htmlFor="email" className="absolute block left-0 -top-7 peer-placeholder-shown:hidden transition-all
                                         ">Email Address</label>
@@ -166,7 +166,7 @@ const SubscribeModal = ({ isOpen, onClose, hideOnClose }) => {
                                             type="text"
                                             placeholder="First Name"
                                             required
-                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-transparent placeholder-slate-950
+                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-black
                                             " />
                                         <label htmlFor="firstName" className="absolute block left-0 -top-7 peer-placeholder-shown:hidden transition-all
                                         ">First Name</label>
@@ -178,7 +178,7 @@ const SubscribeModal = ({ isOpen, onClose, hideOnClose }) => {
                                             type="text"
                                             placeholder="Last Name"
                                             required
-                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-transparent placeholder-slate-950
+                                            className="w-full sm:w-60 px-4 py-2 text-sm font-semibold leading-6 text-black bg-slate-50 rounded-md shadow-sm ring-1 ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 peer placeholder-black
                                             " />
                                         <label htmlFor="lastName" className="absolute block left-0 -top-7 peer-placeholder-shown:hidden transition-all
                                         ">Last Name</label>
