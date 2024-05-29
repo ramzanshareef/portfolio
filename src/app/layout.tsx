@@ -26,7 +26,7 @@ export default async function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    let session = await getSession();
+    let session = await getSession() as { isSub?: string };
     return (
         <html lang="en" className="bg-slate-900 text-slate-100">
             <body className={clsx(urbanist.className, "relative min-h-screen")}>
