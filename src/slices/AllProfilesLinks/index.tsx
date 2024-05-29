@@ -4,6 +4,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { FaGithub } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
+import SubscribeButton from "@/components/email/SubscribeButton";
 
 export type AllProfilesLinksProps = SliceComponentProps<Content.AllProfilesLinksSlice>;
 
@@ -26,6 +27,7 @@ const AllProfilesLinks = ({ slice }: AllProfilesLinksProps): JSX.Element => {
                     />
                 ))}
             </div>
+            <SubscribeButton />
         </Bounded>
     );
 };

@@ -32,7 +32,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts"
-    ],
+, "src/utils/emailer.js", "src/components/email/FooterEmailSubsribe.jsx"    ],
     "exclude": [
         "node_modules"
     ]
