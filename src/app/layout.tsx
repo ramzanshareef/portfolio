@@ -27,6 +27,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     let session = await getSession() as { isSub?: string };
+    let showSubModal = process.env.SHOW_SUB_MODAL_ON_HOME === "true";
     return (
         <html lang="en" className="bg-slate-900 text-slate-100">
             <body className={clsx(urbanist.className, "relative min-h-screen")}>
@@ -43,11 +44,13 @@ export default async function RootLayout({
                 <PrismicPreview repositoryName={repositoryName} />
                 <Analytics />
                 <SpeedInsights />
-                <SubscribeModal
-                    isOpen={session?.isSub === "true" ? false : true}
-                    hideOnClose={true}
-                    onClose={{}}
-                />
+                {showSubModal &&
+                    <SubscribeModal
+                        isOpen={session?.isSub === "true" ? false : true}
+                        hideOnClose={true}
+                        onClose={{}}
+                    />
+                }
             </body>
         </html>
     );
