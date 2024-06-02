@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
@@ -7,6 +8,10 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { formatDateForExperience } from "@/utils/formatDate";
 import { PrismicNextImage } from "@prismicio/next";
+import { LikeButton, Provider } from "@lyket/react";
+import { FcLike } from "react-icons/fc";
+import { CiHeart } from "react-icons/ci";
+import { toast } from "react-toastify";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +21,8 @@ type CreationsListProps = {
 
 export default function CreationsList({
     creations,
-}: CreationsListProps) {
+    LYKET_API_KEY,
+}: CreationsListProps & { LYKET_API_KEY: string }) {
     const component = useRef(null);
     const itemsRef = useRef<Array<HTMLLIElement | null>>([]);
 
@@ -77,7 +83,7 @@ export default function CreationsList({
     };
 
     return (
-        <>
+        <Provider apiKey={LYKET_API_KEY}>
             <ul
                 ref={component}
                 className="grid grid-cols-1 gap-y-8 md:gap-y-12"
@@ -162,9 +168,57 @@ export default function CreationsList({
                                     </div>
                                 ) : <></>
                             }
+                            <div className="flex flex-row justify-center items-center">
+                                <LikeButton
+                                    namespace="portfolio-creations"
+                                    id={index.toString()}
+                                    component={LikeButton.templates.Twitter}
+                                    children={({ totalLikes, handlePress, userLiked }) => (
+                                        <button
+                                            className="flex flex-row items-center gap-x-2 text-2xl max-sm:text-lg"
+                                            onClick={(e) => {
+                                                handlePress(e);
+                                                if (userLiked) {
+                                                    toast.error("Sad to see you unlike! 😢",
+                                                        {
+                                                            position: "bottom-left",
+                                                            autoClose: 2000,
+                                                            hideProgressBar: false,
+                                                            closeOnClick: true,
+                                                            pauseOnHover: true,
+                                                            draggable: true,
+                                                            progress: undefined,
+                                                        }
+                                                    );
+                                                }
+                                                else {
+                                                    toast.success("Thankyou for liking! 😊",
+                                                        {
+                                                            position: "bottom-left",
+                                                            autoClose: 2000,
+                                                            hideProgressBar: false,
+                                                            closeOnClick: true,
+                                                            pauseOnHover: true,
+                                                            draggable: true,
+                                                            progress: undefined,
+                                                        }
+                                                    );
+                                                }
+                                            }}
+                                        >
+                                            {userLiked ? (
+                                                <FcLike className="text-3xl max-sm:text-xl" />
+                                            ) : (
+                                                <CiHeart className="text-3xl max-sm:text-xl" />
+                                            )}
+                                            <span>{totalLikes}</span>
+                                        </button>
+                                    )}
+                                />
+                            </div>
                         </li>
                     ))}
             </ul >
-        </>
+        </Provider>
     );
 }

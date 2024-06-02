@@ -20,6 +20,7 @@ const CreationsBlock = ({ slice }: CreationsBlockProps): JSX.Element => {
         >
             <CreationsList
                 creations={slice.items}
+                LYKET_API_KEY={process.env.LYKET_API_KEY as string}
             />
         </Bounded>
     );
