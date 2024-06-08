@@ -231,8 +231,7 @@ const SubscribeModal = ({ isOpen, onClose, hideOnClose }) => {
                                         className="flex justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600
                 disabled:cursor-not-allowed disabled:shadow-none disabled:bg-red-400 disabled:hover:bg-red-400 disabled:focus-visible:outline-red-400 disabled:focus-visible:outline-offset-0 disabled:focus-visible:outline-2"
                                         onClick={async () => {
-                                            let guestPassword = prompt("Enter the password to view as guest");
-                                            let res = await guestSession(guestPassword);
+                                            let res = await guestSession();
                                             if (res) {
                                                 toast.success(
                                                     <div className="z-9999">
