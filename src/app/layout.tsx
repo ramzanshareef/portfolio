@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SubscribeModal from "@/components/modals/SubscribeModal";
 import { getSession } from "../utils/session";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
 
@@ -31,6 +32,9 @@ export default async function RootLayout({
     return (
         <html lang="en" className="bg-slate-900 text-slate-100">
             <body className={clsx(urbanist.className, "relative min-h-screen")}>
+                {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
+                    <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+                )}
                 <NextTopLoader
                     color="#000fff"
                     showSpinner={false}
