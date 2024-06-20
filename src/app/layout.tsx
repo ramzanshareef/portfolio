@@ -32,8 +32,8 @@ export default async function RootLayout({
     return (
         <html lang="en" className="bg-slate-900 text-slate-100">
             <body className={clsx(urbanist.className, "relative min-h-screen")}>
-                {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
-                    <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+                {process.env.GOOGLE_ANALYTICS && (
+                    <GoogleAnalytics ga_id={process.env.GOOGLE_ANALYTICS} />
                 )}
                 <NextTopLoader
                     color="#000fff"
